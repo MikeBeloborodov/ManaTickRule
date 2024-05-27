@@ -1,0 +1,38 @@
+<Ui>
+	<Script file="ManaTickRule.lua"/>
+	<StatusBar name="ManaTickRuleFrame" drawLayer="BORDER" toplevel="true" parent="PlayerFrameManaBar" hidden="false">
+		<Anchors>
+			<Anchor point="LEFT">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+
+		<Layers>
+			<Layer level="OVERLAY">
+				<Texture name="$parent_spark" file="Interface\CastingBar\UI-CastingBar-Spark" alphaMode="ADD">
+					<Size>
+						<AbsDimension x="32" y="32"/>
+					</Size>
+
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Scripts>
+			<OnLoad>
+				ManaTickRule_OnLoad();
+			</OnLoad>
+			<OnEvent>
+				ManaTickRule_OnEvent();
+			</OnEvent>
+			<OnUpdate>
+				ManaTickRule_OnUpdate();
+			</OnUpdate>
+		</Scripts>
+	</StatusBar>
+</Ui>

@@ -1,0 +1,5 @@
+## Interface: 11200
+## Title: Mana Tick Rule
+## Notes: 5 second rule \ mana tick on mana bar
+## Author: MikeBeloborodov
+ManaTickRule.xml
