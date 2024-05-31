@@ -11,6 +11,11 @@ function PrintWhite(msg)
 end
 
 function ManaTickRule_OnLoad()
+	-- if not mage
+	if UnitManaMax("player") == 100 then
+		this:Hide()
+	end
+
 	this:RegisterEvent("UNIT_MANA")
 
 	this:SetWidth(PlayerFrameManaBar:GetWidth())
@@ -54,10 +59,10 @@ function ManaTickRule_OnEvent()
 end
 
 function ManaTickRule_OnUpdate()
-	if (UnitManaMax("player") > UnitMana("player")) then
+	if UnitManaMax("player") > UnitMana("player") then
 		local time = GetTime()
 		local sparkPosition = ((time - this.startTime) / (this.maxValue - this.startTime)) * this:GetWidth();
-		if ( sparkPosition < 0 ) then
+		if sparkPosition < 0 then
 			sparkPosition = 0;
 		end
 		ManaTickRuleFrame_spark:SetPoint("CENTER", ManaTickRuleFrame, "LEFT", sparkPosition, 0);
